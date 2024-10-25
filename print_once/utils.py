@@ -24,12 +24,9 @@ def call_once(func, *args, identifier=None, max_times=1, **kwargs):
 
 def print_once(
     *values: object,
-    sep: str | None = " ",
-    end: str | None = "\n",
-    file = None,
-    flush = False,
     identifier=None,
     max_times=1,
+    **kwargs,
 ):
     if identifier is None:
         stack = inspect.stack()
@@ -38,4 +35,4 @@ def print_once(
         line_number = caller_frame.lineno
         identifier = f"{file_name}:{line_number}"
     
-    return call_once(builtins.print, *values, sep=sep, end=end, file=file, flush=flush, identifier=identifier, max_times=max_times)
+    return call_once(builtins.print, *values, identifier=identifier, max_times=max_times, **kwargs)

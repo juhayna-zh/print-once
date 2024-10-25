@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="print-once", 
-    version="0.0.1",    
+    version="0.0.2",    
     author="Juhayna",   
     author_email="juhayna@foxmail.com", 
     description="Allows you to print certain line only once in the loops.", 
